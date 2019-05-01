@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ajouter un enfant à un noeud</title>
+		<script>
+			window.onload = function () {
+				eDiv2 = document.getElementById("div2");
+				eDiv1 = eDiv2.parentNode;
+			}
+			
+			function supprimeOuAjouteDiv2() {
+				// var elementAjoute = e.appendChild(nEnfant)
+				// 'nEnfant' est le noeud ajouté à la fin de la liste des enfants
+				// 'e' est le noeud parent de l'enfant à ajouter 
+				// 'elementAjoute' contiendra l'élément ajouté
+				
+				if (eDiv2.parentNode === eDiv1) {
+					eDiv1.removeChild(eDiv2);
+					document.querySelector("button").innerHTML = "Ajouter div2";
+				} else {
+					eDiv1.appendChild(eDiv2);
+					document.querySelector("button").innerHTML = "Supprimer div2";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<main>
+			<div id="div1">
+				<div id="div2">Contenu de div2</div>
+			</div>
+			<button onclick="supprimeOuAjouteDiv2()">Supprimer div2</button>
+		</main>
+	</body>
+</html>
+

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insérer un noeud avant un autre</title>
+		<script>
+			window.onload = function() {
+				// var nInsere = e.insertBefore(nNouveau, nref)
+				// 'nInsere'  noeud inséré, c-à-d 'nNouveau'
+				// 'e'        élément parent du noeud inséré
+				// 'nNouveau' noeud à insérer
+				// 'nref'     noeud avant lequel 'nNouveau' est inséré  
+
+				// Création du paragraphe 0
+				var eP0 = document.createElement("p");
+				eP0.appendChild(document.createTextNode("Contenu du paragraphe 0"));
+
+				// Insertion du paragraphe 0 avant le paragraphe 1
+				var eP1 = document.getElementById("p1");
+				eP1.parentNode.insertBefore(eP0, eP1);
+				
+				// Création du paragraphe 2
+				var eP2 = document.createElement("p");
+				eP2.appendChild(document.createTextNode("Contenu du paragraphe 2"));
+
+				// Insertion du paragraphe 2 après le paragraphe 1
+				// Pour insérer après, combiner insertBefore et nextSibling
+				window.alert("Nom du noeud frère suivant eP1 : " + eP1.nextSibling.nodeName);
+				eP1.parentNode.insertBefore(eP2, eP1.nextSibling);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<p id="p1">Contenu du paragraphe 1</p>
+		</div>
+	</body>
+</html>
+

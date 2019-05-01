@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Test gestion des attributs d'un élément</title>
+		<script>
+			window.onload = function () {
+				var e = document.querySelector("a");
+				var mes = "Valeurs des attributs de la balise <a> : \n";
+				for (var i = 0; i< e.attributes.length; i++) {
+					mes += "Attribut d'indice " + i + " : " +
+						    e.attributes[i].value + " (" +
+						
+						    e.attributes[i].name + ")\n";
+				}
+				window.alert(mes);
+				
+				e.setAttribute("target", "_self");
+				
+				console.log("Nouvelle valeur de e.target : " + e.target);
+				
+				e.removeAttribute("id");
+			}
+		</script>
+	</head>
+	<body>
+		<a id="idTest" class="classeTest" href="https://www.google.com" target="_blank">Lien externe</a>
+	</body>
+</html>
+

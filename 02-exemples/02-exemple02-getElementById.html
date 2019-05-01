@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Test getElementById</title>
+		<script>
+			window.onload = function () {
+				window.alert("Contenu du paragraphe d'identifiant 'p1' :\n"
+							 + document.getElementById("p1").innerHTML);
+			}
+		</script>
+	</head>
+	<body>
+		<main>
+			<section>
+				<h1>Titre de la section</h1>
+				<p id="p1">Paragraphe de la section</p>
+			</section>
+		</main>
+	</body>
+</html>
+

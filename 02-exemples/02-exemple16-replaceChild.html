@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Remplacer l'enfant d'un noeud par un autre</title>
+		<script>
+			function alternerContenusTd1Td2() {
+				// var nremplace = e.replaceChild(nNouvelEnfant, nEnfant)
+				// 'nEnfant' est le noeud enfant à remplacer
+				// 'nouvelEnfant' est le nouveau noeud qui remplacera "nEnfant'
+				//                s'il existe déjà dans le DOM, il sera d'abord enlevé
+				// 'e' est le noeud parent
+				// 'nRemplace' est le noeud remplacé (c'est le même noeud que 'nEnfant')
+				
+				var eTd1 = document.getElementById("td1");
+				var eTd2 = document.getElementById("td2");
+				var eAncienTd1 = eTd1.replaceChild(eTd2.firstChild, eTd1.firstChild);
+				
+				eTd2.appendChild(eAncienTd1);
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td id="td1"><a href="https://www.google.com">Google</a></td>
+				<td id="td2"><a href="https://www.linkedin.com">LinkedIn</a></td>
+			</tr>
+		</table>
+		<button onclick="alternerContenusTd1Td2()">Alterner le contenu des cellules</button>
+	</body>
+</html>
+

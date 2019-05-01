@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Test querySelector</title>
+<!--
+		<style>
+			.test em {color: red;}
+		</style>
+-->
+		<script>
+			window.onload = function () {
+				var element = document.querySelector(".test em");
+				window.alert("Contenu du premier élément ayant pour sélecteur '.test em' : \n"
+							 + element.innerHTML);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<main>
+			<section>
+				<p class="test"><em>Premier</em> paragraphe</p>
+				<p class="test"><em>Deuxième</em> paragraphe</p>
+			</section>
+			<footer><p class="test"><em>Troisième</em> paragraphe</p></footer>
+		</main>
+	</body>
+</html>
+

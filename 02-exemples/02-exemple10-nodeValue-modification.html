@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Test propriété nodeValue (modification)</title>
+		<script>
+			window.onload = function () {
+				var elements = document.querySelector("section").childNodes;
+				for (var i = 0; i< elements.length; i++) {
+					if (elements[i].nodeType === Node.COMMENT_NODE) {
+						elements[i].nodeValue = "Nouveau commentaire de la section";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<main>
+			<section>
+				<!-- Commentaire de la section -->
+				<p class="test"><em>Premier</em> paragraphe</p>
+				<p class="test"><em>Deuxième</em> paragraphe</p>
+			</section>
+			<footer><p class="test"><em>Troisième</em> paragraphe</p></footer>
+		</main>
+	</body>
+</html>
+

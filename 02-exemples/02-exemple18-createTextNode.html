@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Créer un noeud de texte</title>
+		<script>
+			window.onload = function() {
+				// var nTexte = document.createTextNode(chaine)
+				// 'nTexte' est le noeud de texte créé
+				// 'chaine' est une chaîne contenant les données
+				//          à placer dans le noeud de texte 
+
+				var eParagraphe = document.createElement("p");
+				var nTexte = document.createTextNode("Contenu <em>dynamique</em> !");
+
+				eParagraphe.appendChild(nTexte);
+				document.body.appendChild(eParagraphe);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
+

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Test propriété nodeType</title>
+		<script>
+			window.onload = function () {
+				var mes = "Types et noms des noeuds enfants de la balise <section>\n";
+				var elements = document.querySelector("section").childNodes;
+				for (var i = 0; i< elements.length; i++) {
+					mes +="Noeud indice " + i.toString().padStart(2,0) + " : " +
+						  elements[i].nodeType + " (" +
+						
+						  elements[i].nodeName + ")\n";
+				}
+				window.alert(mes);
+			}
+		</script>
+	</head>
+	<body>
+		<main>
+			<section>
+				<!-- Commentaire de la section -->
+				<p class="test"><em>Premier</em> paragraphe</p>
+				<p class="test"><em>Deuxième</em> paragraphe</p>
+			</section>
+			<footer><p class="test"><em>Troisième</em> paragraphe</p></footer>
+		</main>
+	</body>
+</html>
+

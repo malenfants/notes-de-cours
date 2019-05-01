@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Cloner un noeud</title>
+		<script>
+			window.onload = function() {
+				// var eClone = e.cloneNode(enProfondeur)
+				// 'eClone'   duplication du noeud 'e'
+				//            incluant tous ses enfants si 'enProfondeur' vaut 'true'
+				// 'e'        noeud à cloner
+
+				eDiv = document.querySelector("div");
+				
+				// Clonage de l'élément eDiv et de tous ses enfants 
+				eDivClone = eDiv.cloneNode(true);
+				
+				// Insertion de l'élément cloné dans le DOM
+				document.body.appendChild(eDivClone);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div class="test1"><p class="test2">Contenu du paragraphe ...</p></div>
+	</body>
+</html>
+

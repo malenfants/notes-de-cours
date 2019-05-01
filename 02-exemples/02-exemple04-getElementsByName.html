@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Test getElementsByName</title>
+		<script>
+			window.onload = function () {
+				var elements = document.getElementsByName("fruit");
+
+				for (var i = 0; i< elements.length; i++) {
+					window.alert("Fruit numéro " + (i+1) + " : " + elements[i].value + "\n");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<label>Fruit numéro 1</label>
+			<input type="checkbox" name="fruit" value="banane">
+			<label>Fruit numéro 2</label>
+			<input type="checkbox" name="fruit" value="poire">
+			<label>Fruit numéro 3</label>
+			<input type="checkbox" name="fruit" value="pomme">
+		</form>
+	</body>
+</html>
+

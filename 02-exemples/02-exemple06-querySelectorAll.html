@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Test querySelectorAll</title>
+<!--
+		<style>
+			.test em {color: red;}
+		</style>
+-->
+		<script>
+			window.onload = function () {
+				var elements = document.querySelectorAll(".test em");
+				for (var i = 0; i< elements.length; i++) {
+					window.alert("Contenu de l'élément d'indice "+ i + " ayant pour sélecteur '.test em' : \n"
+								 + elements[i].innerHTML);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<main>
+			<section>
+				<p class="test"><em>Premier</em> paragraphe</p>
+				<p class="test"><em>Deuxième</em> paragraphe</p>
+			</section>
+			<footer><p class="test"><em>Troisième</em> paragraphe</p></footer>
+		</main>
+	</body>
+</html>
+

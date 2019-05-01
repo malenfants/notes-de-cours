@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Test getElementsByTagName</title>
+		<script>
+			window.onload = function () {
+				var elementsParagraphes = document.getElementsByTagName("p");
+				
+				window.alert("Nombre de balises <p> : " + elementsParagraphes.length + "\n"
+							 + "Contenu du troisième paragraphe :\n"
+							 + elementsParagraphes[2].innerHTML);
+			}
+		</script>
+	</head>
+	<body>
+		<main>
+			<section>
+				<p>Premier paragraphe</p>
+				<p>Deuxième paragraphe</p>
+			</section>
+			<footer><p>Troisième paragraphe</p></footer>
+		</main>
+	</body>
+</html>
+

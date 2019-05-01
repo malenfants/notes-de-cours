@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Créer un élément HTML</title>
+		<script>
+			window.onload = function() {
+				// var e = document.createElement(tagName)
+				// 'e' est l'élément créé
+				// 'tagName' est une chaîne précisant le nom de balise à créer,
+				//           la propriété nodeName de l'élément est 
+				//           initialisée avec la valeur de tagName
+
+				var eParagraphe = document.createElement("p");
+
+				eParagraphe.innerHTML = "Contenu <em>dynamique</em> !";
+				document.body.appendChild(eParagraphe);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<title>Test navigation dans le DOM</title>
+		<script>
+			window.onload = function () {
+				var e = document.querySelector("section");
+				mes  = "Nombre d'éléments enfants de l'élément 'section' : " +
+					   e.children.length + '\n';
+				mes += "Contenu du premier élément enfant de l'élément 'section' : " +
+					   e.firstElementChild.innerHTML + "\n";
+				mes += "Contenu du dernier élément enfant de l'élément 'section' : " +
+					   e.lastElementChild.innerHTML + "\n";
+				mes += "Nom de l'élément frère suivant de l'élément 'section' : " +
+					   e.nextElementSibling.nodeName + "\n";
+				e = document.querySelector("footer");
+				mes += "Nom de l'élément frère précédent de l'élément 'footer' : " +
+					   e.previousElementSibling.nodeName + "\n";
+				window.alert(mes);
+			}
+		</script>
+	</head>
+	<body>
+		<main>
+			<section>
+				<!-- Commentaire de la section -->
+				<p><em>Premier</em> paragraphe</p>
+				<p><em>Deuxième</em> paragraphe</p>
+			</section>
+			<footer><p><em>Troisième</em> paragraphe</p></footer>
+		</main>
+	</body>
+</html>
+
