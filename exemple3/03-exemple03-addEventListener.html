@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>addEventListener()</title>
+	<script type="text/javascript">
+
+		window.addEventListener("load", documentLoaded);
+
+		function documentLoaded() {
+			window.alert("La page est complètement chargée.");
+		}
+	</script>
+</head>
+<body>
+	<h1>Méthode addEventListener()</h1>
+	<pre>
+
+Syntaxe : element.addEventListener(type, listener, useCapture);
+
+addEventListener permet l'assignation de gestionnaires d'évènements sur un élément cible.
+La cible d'un évènement peut être un nœud dans un document, le document lui-même,
+un élément window ou un objet XMLHttpRequest.
+
+type       : étant le type d'événement ("load", "click", ...),
+listener   : la fonction à exécuter au déclenchement de l'événement,
+useCapture : un booléen indiquant si l'on souhaite utiliser le mode
+             capturant ou non.
+
+	</pre>
+</body>
+</html>
+

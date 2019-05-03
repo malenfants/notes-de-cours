@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Gestion d'évènement</title>
+<style>
+	span {display: block;}
+</style>
+<script>
+	window.onload = function() {
+		var eSpan = document.createElement("span");
+		var e = document.querySelector("input"); 
+		e.onchange = function () {
+			
+			var mois = this.value.trim();
+			var regex = /^\d+$/;
+			if (!regex.test(mois) || mois < 1 || mois > 12) {
+				eSpan.innerHTML = "le mois saisi est incorrect";
+				this.parentNode.insertBefore(eSpan, this.nextSibling);
+			} else {
+				if (eSpan.parentNode === this.parentNode)
+					this.parentNode.removeChild(eSpan);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<label>mois : </label>
+	<input type="text" name="mois">
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>L'objet Event</title>
+	<style type="text/css">
+		div, span { padding : 10px; margin-right: 20px; }
+		#monDiv   { background-color: brown; }
+		span      { background-color: beige; }
+	</style>
+	<script>
+		window.addEventListener("load", function(){
+			document.getElementById("monDiv").addEventListener("click", afficherMsg, false);
+			document.getElementById("clear").addEventListener ("click", function(){
+				document.getElementById("txt").value = "";
+			}, false);
+		},false);
+
+		function afficherMsg(evt) {
+			if (evt.target.nodeName !== "DIV") {
+				var zoneText = document.getElementById("txt");
+				zoneText.value += "Clic sur " + evt.target.firstChild.nodeValue + "\n";
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Évènements capturés sur <strong>un noeud parent</strong>
+				    en utilisant la propriété <strong>target</strong></legend>
+			<div id="monDiv">
+				<span>span 1</span><span>span 2</span><span>span 3</span><span>span 4</span><span>span 5</span>
+			</div>
+			<textarea id="txt" cols="50" rows="5"></textarea><br />
+			<input type="button" id="clear" value="Effacer" />
+		</fieldset>
+	</form>
+</body>
+</html>
+

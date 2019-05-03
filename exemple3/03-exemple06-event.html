@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>L'objet Event</title>
+	<style>
+		div, span  { padding: 10px; margin-right: 20px; }
+		p          { padding: 10px 0; }
+		#monDiv    { background-color: brown; }
+		#monP      { background-color: lightcoral; }
+		#monSpan   { background-color: beige; }
+	</style>
+	<script>
+		window.addEventListener("load", function(){
+			var useCapture = true; //Phase de capture
+			
+			document.getElementById("monSpan").addEventListener("click", afficherMsg, false);
+			document.getElementById("monP").addEventListener   ("click", afficherMsg, false);
+			document.getElementById("monDiv").addEventListener ("click", afficherMsg, useCapture);
+			document.getElementById("clear").addEventListener  ("click", function(){
+				document.getElementById("txt").value = "";
+			}, false);
+		},false);
+
+		function afficherMsg(evt) {
+			
+			var zoneText = document.getElementById("txt");
+			zoneText.value += "\nÉvènement intercepté : " + evt.type + "\n" +
+							  "event.currentTarget = " + evt.currentTarget + "\n" +
+							  "event.target        = " + evt.target + "\n" +
+							  "event.eventPhase    = ";
+			switch(evt.eventPhase) {
+				// Phase 1
+				case Event.CAPTURING_PHASE : zoneText.value += "capture";        break;
+				// Phase 2
+				case Event.AT_TARGET :       zoneText.value += "cible";          break;
+				// Phase 3
+				case Event.BUBBLING_PHASE :  zoneText.value += "bouillonnement"; break;
+			}
+			zoneText.value += "\n";
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Évènements capturés</legend>
+			<div id="monDiv"><p id="monP"><span id="monSpan">monSpan</span></div><p>
+			<textarea id="txt" cols="50" rows="5"></textarea>
+			<input type="button" id="clear" value="Effacer">
+		</fieldset>
+	</form>
+</body>
+</html>
+

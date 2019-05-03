@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Introduction aux phases capture et bouillonnement</title>
+	<style>
+		div, span  { padding: 10px; margin-right: 20px; }
+		p          { padding: 10px 0; }
+		#monDiv    { background-color: brown; }
+		#monP      { background-color: lightcoral; }
+		#monSpan   { background-color: beige; }
+	</style>
+	<script>
+		window.addEventListener("load", function(){
+			var useCapture = true; //Phase de capture
+			
+			document.getElementById("monSpan").addEventListener("click", afficherMsgSpan, false);
+			document.getElementById("monP").addEventListener   ("click", afficherMsgP, false);
+			document.getElementById("monDiv").addEventListener ("click", afficherMsgDiv, useCapture);
+			document.getElementById("clear").addEventListener  ("click", function(){
+				document.getElementById("txt").value = "";
+			}, false);
+		},false);
+
+		function afficherMsgDiv()  { message("monDiv");	}
+		function afficherMsgSpan() { message("monSpan"); }
+		function afficherMsgP()    { message("monP"); }
+
+		function message(str) {
+			document.getElementById("txt").value += "Évènement intercepté par : " + str + "\n";
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>Évènements capturés lors de la phase de <strong>capture</strong></legend>
+			<div id="monDiv"><p id="monP"><span id="monSpan">monSpan</span></div><p>
+			<textarea id="txt" cols="45" rows="5"></textarea>
+			<input type="button" id="clear" value="Effacer">
+		</fieldset>
+	</form>
+</body>
+</html>
+
